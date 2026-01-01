@@ -274,3 +274,15 @@ The final result is a functional translation of complex high-level structures—
 
 ---
 
+# Homework 12: Operating System (OS)
+
+On This project 12, we were asked to explain the Operation System (OS) code that was provided via GitHub Havivha. Here it explanation all of the jack and the connection with other program jack..
+
+**Sys**, initializes all components jack, including Start, Wait, Stop, Error.
+**Memory**, acts as a basic foundation that runs without other OS components.
+**Array**, a “box” for storing multiple values. Array.new borrows space from memory, Array.dispose returns that space.
+**Math**, the computer's built-in calculator. It requires Arrays to perform calculations and indirectly calls memory to store the results.
+**String**, represents text as an array of characters. Uses Memory for storage allocation. and Uses Math to convert numbers to text or text to numbers.
+**Screen**, draws graphics (geometry) by manipulating bits in a Memory Map. It uses Math for geometric calculations and Arrays for bitwise operations (masking).
+**Keyboard**, requires output to display what the user types. Strings are used to create buffers (reading letters/numbers). Also access memory directly (24576) and indirectly from Strings.
+**Output**, it prints text to the screen (hardware) using String for text manipulation, Array for font maps, and Math to calculate pixel positions. It writes directly to Video Memory (RAM 16384) without using the Screen class.
