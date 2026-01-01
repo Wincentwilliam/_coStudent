@@ -244,3 +244,11 @@ To run these programs, you must first compile the high-level `.jack` files into 
 
 ---
 
+# Homework 10: Compiler Reads Jack's
+
+## Description
+In Project 10, the compilation of Jack code is handled in two distinct steps. First, the **Tokenizer** scans the raw text to produce an XML stream of basic building blocks—like symbols and keywords. This stream is then fed into the **Parser**, which interprets the relationship between the tokens to generate an **XML parse tree**, mapping out the code's grammatical logic.
+
+---
+
+#
