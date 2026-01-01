@@ -251,4 +251,26 @@ In Project 10, the compilation of Jack code is handled in two distinct steps. Fi
 
 ---
 
-#
+# Homework 11: Jack Compiler
+
+This project completes the Jack compiler by implementing the backend logic. The compiler translates high-level Jack source code into low-level VM instructions, allowing the code to run on the Hack virtual machine.
+
+## Compiler Architecture
+
+The `JackCompiler.py` script orchestrates the translation process through four specialized modules:
+
+*   **Tokenizer**: Performs lexical analysis by breaking raw Jack text into categorized tokens (keywords, symbols, identifiers, etc.).
+*   **CompilationEngine**: Acts as the "brain" of the compiler. It recursively parses the program structure and generates the corresponding VM logic for expressions and statements.
+*   **SymbolTable**: Manages variable scopes. It tracks whether a variable is `static`, `field`, `argument`, or `local`, assigning them specific segments and indices.
+*   **VMWriter**: The output interface that translates abstract logic into concrete VM commands such as `push`, `pop`, `arithmetic`, `call`, and `return`.
+
+## Workflow
+1. The **Tokenizer** scans the `.jack` file to identify the language building blocks.
+2. The **CompilationEngine** follows the Jack grammar to understand the program's intent.
+3. The **SymbolTable** maps identifiers to memory locations.
+4. The **VMWriter** emits a complete `.vm` file containing the translated stack-based instructions.
+
+The final result is a functional translation of complex high-level structures—including variable handling, array access, and method calls—into executable VM code.
+
+---
+
