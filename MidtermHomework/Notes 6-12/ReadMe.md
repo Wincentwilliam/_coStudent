@@ -159,10 +159,10 @@ This project is a **Virtual Machine (VM) Translator** built for the Nand2Tetris 
   - `static`
 
 ## Project Structure
-- **7.py**: The main Python translator script.
+- `7.py`: The main Python translator script.
 - **StackArithmetic/**: Test folders for arithmetic operations (`SimpleAdd`, `StackTest`).
 - **MemoryAccess/**: Test folders for memory segments (`BasicTest`, `PointerTest`, `StaticTest`).
-- **README.md**: Project documentation.
+
 
 ## How to Run the Translator
 
@@ -173,3 +173,41 @@ python 7.py <Path_to_VM_File>
 ```
 
 ---
+
+# VM Translator - Nand2Tetris Homework 8
+
+## AI Acknowledgment
+This chapter was completed with the support of Artificial Intelligence.
+AI Tool: GOOGLE AI STUDIO (GEMINI)
+Link: https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221BbQZL91iR-cGp5eaamgr7BoWOb1ai-8h%22%5D,%22action%22:%22open%22,%22userId%22:%22113497521968724205844%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing
+
+## Description
+In This project is a full-scale **Virtual Machine Translator** that converts VM code (intermediate code) into **Hack Assembly Language**. 
+
+While Project 7 focused on stack arithmetic and memory segments, **Project 8** implements the logic for **Program Flow** (branching) and the **Function Calling Protocol**. This allows the Hack computer to handle complex behaviors like nested function calls and recursion.
+
+## Features
+- **Arithmetic & Logic:** Implementation of all 9 stack commands (`add`, `sub`, `neg`, `eq`, `gt`, `lt`, `and`, `or`, `not`).
+- **Memory Management:** Full support for 8 memory segments (`local`, `argument`, `this`, `that`, `constant`, `static`, `temp`, `pointer`).
+- **Branching logic:** Handles `label`, `goto`, and `if-goto` commands for program flow control.
+- **Function Handling:** 
+    - `function` declaration: Handles stack allocation for local variables.
+    - `call` command: Implements the standard VM calling convention (saving the caller's frame).
+    - `return` command: Safely restores the caller's environment and passes return values.
+- **Bootstrap Initialization:** Automatically inserts code to set `SP = 256` and invoke `Sys.init` when processing a multi-file project directory.
+
+## File Structure
+- `8.py`: The main Python translator script containing the `Parser` and `CodeWriter` classes.
+- `ProgramFlow/`: Basic logic tests (`BasicLoop`, `FibonacciSeries`).
+- `FunctionCalls/`: Advanced tests including recursion and multi-file projects (`SimpleFunction`, `NestedCall`, `FibonacciElement`, `StaticsTest`).
+
+## How to Use
+
+### 1. Translate a Single VM File
+Use this for simple logic tests that do not use `Sys.init`:
+```bash
+python 8.py path/to/filename.vm
+```
+
+---
+
