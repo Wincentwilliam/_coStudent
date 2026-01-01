@@ -211,3 +211,36 @@ python 8.py path/to/filename.vm
 
 ---
 
+# Nand2Tetris Homework 9: High-Level Programming 
+
+This project is part of the **Computer Architecture** curriculum from the book *The Elements of Computing Systems* (Nand2Tetris). The goal of this project is to become familiar with the **Jack language**, a high-level, object-oriented language with a Java-like syntax.
+
+## Project Structure
+
+This directory contains several Jack programs that demonstrate different features of the language:
+
+*   **`Average`**: A simple command-line program that inputs a list of numbers and computes their average using integer division.
+*   **`ComplexArrays`**: A test suite that performs complex array manipulations to test the limits of the Jack compiler and VM.
+*   **`ConvertToBin`**: Demonstrates low-level memory access (`peek` and `poke`) by converting a decimal number in RAM into binary bits.
+*   **`Fraction`**: Implements a `Fraction` class to demonstrate object construction, field variables, and arithmetic methods.
+*   **`HelloWorld`**: A basic program that uses the built-in OS `Output` class to print text to the screen.
+*   **`List`**: Implements a linked list using pointers and recursion.
+*   **`Pong`**: A complete graphical game. Includes classes for a `Ball`, `Bat` (paddle), and `PongGame` logic.
+*   **`Square`**: An interactive application where you move a square on the screen using arrow keys and resize it with 'z' and 'x'.
+
+---
+
+## How to Compile
+
+To run these programs, you must first compile the high-level `.jack` files into intermediate `.vm` files using the **JackCompiler**.
+
+1.  Open your terminal in VS Code.
+2.  Navigate to your `nand2tetris/tools` directory.
+3.  Run the following command (replace the path with your actual folder path):
+
+```powershell
+.\JackCompiler.bat "C:\Path\To\Your\Project\9\Folder"
+```
+
+---
+
